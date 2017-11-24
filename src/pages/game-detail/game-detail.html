@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Matchs</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngIf="game.id">
+        <ion-card-content>
+            <h2 class="card-title">{{game.team_A}} versus {{game.team_B}}</h2>
+            <!-- <p>{{game.stadium}}</p> -->
+        </ion-card-content>
+        <ion-list>
+            <ion-item>
+                <ion-icon item-left name="clock"></ion-icon>
+                <h3>Date</h3>
+                <ion-note item-right>{{game.date}}</ion-note>
+            </ion-item>
+            <ion-item>
+                <ion-icon item-left name="home"></ion-icon>
+                <h3>Stade</h3>
+                <ion-note item-right>{{game.stadium}}</ion-note>
+            </ion-item>
+            <ion-item>
+                <ion-icon item-left name="globe"></ion-icon>
+                <h3>Ligue</h3>
+                <ion-note item-right>{{game.league}}</ion-note>
+            </ion-item>
+            <ion-item>
+                <ion-note item-right>{{game.team_A}} {{game.goals_team_A}} - {{game.goals_team_B}} {{game.team_B}}</ion-note>
+            </ion-item>
+        </ion-list>
+
+        <ion-item>
+            <button ion-button icon-left (click)="favorite(game)" clear item-left>
+                <ion-icon name="star"></ion-icon>
+                Favorite
+            </button>
+            <button ion-button icon-left (click)="share(game)" clear item-right>
+                <ion-icon name="share"></ion-icon>
+                Share
+            </button>
+        </ion-item>
+
+    </ion-card>
+</ion-content>
