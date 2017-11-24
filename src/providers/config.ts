@@ -1,1 +1,1 @@
-export let SERVER_URL = "https://young-atoll-17718.herokuapp.com/";
+export let SERVER_URL = "https://git.heroku.com/bet-pic.git/";
