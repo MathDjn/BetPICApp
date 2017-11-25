@@ -31,9 +31,9 @@ export class MyApp {
         this.initializeApp();
 
         this.appMenuItems = [
-            {title: 'Games', component: GameListPage, icon: 'bonfire'},
-            {title: 'Favorites', component: FavoriteListPage, icon: 'star'},
-            {title: 'Bets', component: BetListPage, icon: 'bonfire'}
+            {title: 'Matchs', component: GameListPage, icon: 'football'},
+            {title: 'Favoris', component: FavoriteListPage, icon: 'star'},
+            {title: 'Paris', component: BetListPage, icon: 'beer'}
         ];
 
         this.helpMenuItems = [

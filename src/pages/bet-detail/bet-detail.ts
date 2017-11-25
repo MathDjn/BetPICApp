@@ -17,17 +17,17 @@ export class BetDetailPage {
         );
     }
 
-    favorite(bet) {
-        this.BetService.favorite(bet)
-            .then(bet => {
-                let toast = this.toastCtrl.create({
-                    message: 'Bet added to your favorites',
-                    cssClass: 'mytoast',
-                    duration: 1000
-                });
-                toast.present(toast);
-            });
-    }
+    // favorite(bet) {
+    //     this.BetService.favorite(bet)
+    //         .then(bet => {
+    //             let toast = this.toastCtrl.create({
+    //                 message: 'Bet added to your favorites',
+    //                 cssClass: 'mytoast',
+    //                 duration: 1000
+    //             });
+    //             toast.present(toast);
+    //         });
+    // }
 
     share(bet) {
         let actionSheet: ActionSheet = this.actionSheetCtrl.create({
