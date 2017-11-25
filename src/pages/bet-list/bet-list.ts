@@ -1,41 +1,41 @@
 import {Component} from '@angular/core';
 import {Config, NavController} from 'ionic-angular';
-import {GameService} from '../../providers/game-service-rest';
-import {GameDetailPage} from '../game-detail/game-detail';
+import {BetService} from '../../providers/bet-service-rest';
+import {BetDetailPage} from '../bet-detail/bet-detail';
 import leaflet from 'leaflet';
 
 @Component({
-    selector: 'page-game-list',
-    templateUrl: 'game-list.html'
+    selector: 'page-bet-list',
+    templateUrl: 'bet-list.html'
 })
-export class GameListPage {
+export class BetListPage {
 
-    games: Array<any>;
-    gamesForSearch: Array<any>;
+    bets: Array<any>;
+    betsForSearch: Array<any>;
     searchKey: string = "";
     viewMode: string = "list";
     map;
     markersGroup;
 
-    constructor(public navCtrl: NavController, public service: GameService, public config: Config) {
+    constructor(public navCtrl: NavController, public service: BetService, public config: Config) {
         this.findAll();
     }
 
-    openGameDetail(game: any) {
-        this.navCtrl.push(GameDetailPage, game);
+    openBetDetail(bet: any) {
+        this.navCtrl.push(BetDetailPage, bet);
     }
 
     onInput(event) {
          // Reset items back to all of the items
-        this.games = this.gamesForSearch;
+        this.bets = this.betsForSearch;
 
         // set val to the value of the searchbar
         let val = this.searchKey;
 
         // if the value is an empty string don't filter the items
         if (val && val.trim() != '') {
-          this.games = this.games.filter((game) => {
-            return (game.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+          this.bets = this.bets.filter((bet) => {
+            return (bet.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
           })
         }
     }
@@ -47,31 +47,31 @@ export class GameListPage {
     findAll() {
         this.service.findAll()
             .then(data => {
-                this.games = data;
-                this.gamesForSearch = data;
+                this.bets = data;
+                this.betsForSearch = data;
             })
             .catch(error => alert(error));
     }
 
-    gameMap() {
+    betMap() {
         setTimeout(() => {
             this.map = leaflet.map("map").setView([48.85, 2.35], 10);
             leaflet.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
                 attribution: 'Tiles &copy; Esri'
             }).addTo(this.map);
-            this.gameMarkers();
+            this.betMarkers();
         })
     }
 
-    gameMarkers() {
+    betMarkers() {
         if (this.markersGroup) {
             this.map.removeLayer(this.markersGroup);
         }
         this.markersGroup = leaflet.layerGroup([]);
-        this.games.forEach(game => {
-            if (game.lat, game.lng) {
-                let marker: any = leaflet.marker([game.lat, game.lng]).on('click', event => this.openGameDetail(event.target.data));
-                marker.data = game;
+        this.bets.forEach(bet => {
+            if (bet.lat, bet.lng) {
+                let marker: any = leaflet.marker([bet.lat, bet.lng]).on('click', event => this.openBetDetail(event.target.data));
+                marker.data = bet;
                 this.markersGroup.addLayer(marker);
             }
         });

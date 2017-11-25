@@ -4,6 +4,7 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
 import {GameListPage} from '../pages/game-list/game-list';
+import {BetListPage} from '../pages/bet-list/bet-list';
 import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
 import {WelcomePage} from '../pages/welcome/welcome';
 import {AboutPage} from '../pages/about/about';
@@ -31,7 +32,8 @@ export class MyApp {
 
         this.appMenuItems = [
             {title: 'Games', component: GameListPage, icon: 'bonfire'},
-            {title: 'Favorites', component: FavoriteListPage, icon: 'star'}
+            {title: 'Favorites', component: FavoriteListPage, icon: 'star'},
+            {title: 'Bets', component: BetListPage, icon: 'bonfire'}
         ];
 
         this.helpMenuItems = [
