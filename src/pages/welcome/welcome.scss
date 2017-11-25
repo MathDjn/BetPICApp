@@ -2,6 +2,12 @@ page-welcome {
 
   font-weight: 300;
 
+  ion-header {
+    ion-navbar {
+      background-color: rgba(58, 157, 35, 1.0);
+    }
+  }
+
   ion-slide {
 
     position: relative;
