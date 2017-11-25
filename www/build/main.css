@@ -24788,7 +24788,7 @@ ion-navbar.toolbar {
 }
 
 .about-header {
-  background-color: #434954;
+  background-color: #3A9D23;
   padding: 16px;
   width: 100%;
   min-height: 150px;
@@ -24803,7 +24803,7 @@ ion-navbar.toolbar {
 }
 
 .about-info p {
-  color: #697072;
+  color: #3A9D23;
   text-align: left;
 }
 
@@ -24854,10 +24854,10 @@ page-welcome ion-slide p {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(163, 19, 178, 0.8);
+  background-color: #3a9d23;
   color: #FFFFFF;
   padding: 28px 28px 48px 28px;
-  font-size: 2.7rem;
+  font-size: 2.0rem;
   margin-bottom: 0;
 }
 

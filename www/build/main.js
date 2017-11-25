@@ -309,7 +309,7 @@ __decorate([
 ], WelcomePage.prototype, "slides", void 0);
 WelcomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-welcome',template:/*ion-inline-start:"C:\Users\mathilde.dujon\Documents\GitHub\BetPICApp\src\pages\welcome\welcome.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-title>Welcome</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content no-bounce>\n\n    <ion-slides>\n\n        <ion-slide style="background-image: url(\'assets/img/slide_1.jpg\');">\n\n            <p>L\'important, ce ne sont pas les apps.<br/>C\'est ce que vous en faites.</p>\n\n        </ion-slide>\n\n\n\n        <ion-slide style="background-image: url(\'assets/img/slide_2.jpg\')">\n\n            <p>Discover the best shows</p>\n\n        </ion-slide>\n\n\n\n        <ion-slide style="background-image: url(\'assets/img/slide_3.jpg\')">\n\n            <p>\n\n                Learn how to code with HackX! <br />\n\n                <button ion-button (click)="openGameList()">\n\n                    Start\n\n                </button>\n\n            </p>\n\n        </ion-slide>\n\n    </ion-slides>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\mathilde.dujon\Documents\GitHub\BetPICApp\src\pages\welcome\welcome.html"*/
+        selector: 'page-welcome',template:/*ion-inline-start:"C:\Users\mathilde.dujon\Documents\GitHub\BetPICApp\src\pages\welcome\welcome.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-title>Prêt ?</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content no-bounce>\n\n    <ion-slides>\n\n        <ion-slide style="background-image: url(\'assets/img/slide_1.jpg\');">\n\n            <p>L\'important, ce ne sont pas les matchs.<br/>C\'est ce que vous en faites.</p>\n\n        </ion-slide>\n\n\n\n        <ion-slide style="background-image: url(\'assets/img/slide_2.jpg\')">\n\n            <p>Discover the best shows</p>\n\n        </ion-slide>\n\n\n\n        <ion-slide style="background-image: url(\'assets/img/slide_3.jpg\')">\n\n            <p>\n\n                Learn how to code with HackX! <br />\n\n                <button ion-button (click)="openGameList()">\n\n                    Start\n\n                </button>\n\n            </p>\n\n        </ion-slide>\n\n    </ion-slides>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\mathilde.dujon\Documents\GitHub\BetPICApp\src\pages\welcome\welcome.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
 ], WelcomePage);
@@ -529,7 +529,7 @@ MyApp = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SERVER_URL; });
-var SERVER_URL = "https://young-atoll-17718.herokuapp.com/";
+var SERVER_URL = "https://bet-pic.herokuapp.com/";
 //# sourceMappingURL=config.js.map
 
 /***/ }),
