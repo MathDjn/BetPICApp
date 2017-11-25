@@ -4,7 +4,12 @@ page-welcome {
 
   ion-header {
     ion-navbar {
-      background-color: rgba(58, 157, 35, 1.0);
+
+      background-size: cover;
+      .toolbar-background {
+        background-color: rgba(58, 157, 35, 1.0);
+      }
+
     }
   }
 
@@ -21,7 +26,7 @@ page-welcome {
       background-color: rgba(58, 157, 35, 1.0);
       color: #FFFFFF;
       padding: 28px 28px 48px 28px;
-      font-size: 2.0rem;
+      font-size: 1.8rem;
       margin-bottom: 0;
     }
 
