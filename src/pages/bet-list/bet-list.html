@@ -14,10 +14,10 @@
     <ion-list *ngIf="viewMode==='list'">
 
         <ion-item-sliding *ngFor="let bet of bets">
-            <!-- <button ion-item (click)="openBetDetail(bet)">
-                <ion-thumbnail item-left>
+            <button ion-item (click)="openBetDetail(bet)">
+                <!-- <ion-thumbnail item-left>
                     <img src="{{game.image}}"/>
-                </ion-thumbnail> -->
+                </ion-thumbnail> --> -->
                 <h2>{{bet.GameId}}</h2>
                 <p>{{bet.username}}</p>
                 <p>{{bet.result}}</p>
