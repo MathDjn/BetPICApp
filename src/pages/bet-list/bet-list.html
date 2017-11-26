@@ -9,17 +9,18 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content class="game-list">
+<ion-content class="bet-list">
 
     <ion-list *ngIf="viewMode==='list'">
 
-        <ion-item-sliding *ngFor="let game of games">
-            <button ion-item (click)="openGameDetail(game)">
+        <ion-item-sliding *ngFor="let bet of bets">
+            <!-- <button ion-item (click)="openBetDetail(bet)">
                 <ion-thumbnail item-left>
                     <img src="{{game.image}}"/>
-                </ion-thumbnail>
-                <h2>{{game.name}}</h2>
-                <p>{{game.date}}</p>
+                </ion-thumbnail> -->
+                <h2>{{bet.GameId}}</h2>
+                <p>{{bet.username}}</p>
+                <p>{{bet.result}}</p>
             </button>
             <ion-item-options>
                 <button danger (click)="deleteItem(game)">Delete</button>
