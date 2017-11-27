@@ -8,9 +8,8 @@ import {WelcomePage} from '../pages/welcome/welcome';
 import {GameListPage} from '../pages/game-list/game-list';
 import {BetListPage} from '../pages/bet-list/bet-list';
 import {GameDetailPage} from '../pages/game-detail/game-detail';
-import {BetDetailPage} from '../pages/bet-detail/bet-detail';
 import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
-import {AboutPage} from '../pages/about/about';
+import {BetModal} from '../pages/bet-modal/bet-modal';
 
 import {GameService} from "../providers/game-service-rest";
 import {BetService} from "../providers/bet-service-rest";
@@ -22,28 +21,26 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     WelcomePage,
-    AboutPage,
     GameListPage,
     GameDetailPage,
     BetListPage,
-    BetDetailPage,
-    FavoriteListPage
+    FavoriteListPage,
+    BetModal
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     WelcomePage,
-    AboutPage,
     GameListPage,
     GameDetailPage,
     BetListPage,
-    BetDetailPage,
-    FavoriteListPage
+    FavoriteListPage,
+    BetModal
   ],
   providers: [
     StatusBar,

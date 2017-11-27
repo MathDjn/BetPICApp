@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
-import {ActionSheetController, ActionSheet, NavController, NavParams, ToastController} from 'ionic-angular';
+import {ActionSheetController, ActionSheet, NavController, NavParams, ToastController, ModalController} from 'ionic-angular';
 import {GameService} from '../../providers/game-service-rest';
+import {BetService} from '../../providers/bet-service-rest';
+import {BetModal} from '../bet-modal/bet-modal'
 
 @Component({
     selector: 'page-game-detail',
@@ -10,9 +12,10 @@ export class GameDetailPage {
 
     game: any;
 
-    constructor(public actionSheetCtrl: ActionSheetController, public navCtrl: NavController, public navParams: NavParams, public GameService: GameService, public toastCtrl: ToastController) {
-        this.game = this.navParams.data;
-        GameService.findById(this.game.id).then(
+    constructor(public actionSheetCtrl: ActionSheetController, public navCtrl: NavController, public navParams: NavParams, public GameService: GameService, public BetService: BetService, public toastCtrl: ToastController, public modalCtrl: ModalController) {
+        this.game = {};
+        let gameId = this.navParams.data;
+        GameService.findById(gameId).then(
             game => this.game = game
         );
     }
@@ -21,7 +24,7 @@ export class GameDetailPage {
         this.GameService.favorite(game)
             .then(game => {
                 let toast = this.toastCtrl.create({
-                    message: 'Game added to your favorites',
+                    message: "C'est dans tes favs !",
                     cssClass: 'mytoast',
                     duration: 1000
                 });
@@ -29,26 +32,59 @@ export class GameDetailPage {
             });
     }
 
-    share(game) {
+    bet(game) {
         let actionSheet: ActionSheet = this.actionSheetCtrl.create({
-            title: 'Share via',
+            title: 'Parier sur',
             buttons: [
                 {
-                    text: 'Twitter',
-                    handler: () => console.log('share via twitter')
+                    text: game.team_A+" l'emporte",
+                    handler: () => {
+                      let betModal = this.modalCtrl.create(BetModal);
+                      betModal.onDidDismiss(username => {
+                        let bet = {
+                          username: username,
+                          GameId: game.id,
+                          result: 'Home Team wins'
+                        };
+                        this.BetService.create(bet);
+                      });
+                      betModal.present();
+                    }
                 },
                 {
-                    text: 'Facebook',
-                    handler: () => console.log('share via facebook')
+                    text: "Match nul",
+                    handler: () => {
+                      let betModal = this.modalCtrl.create(BetModal);
+                      betModal.onDidDismiss(username => {
+                        let bet = {
+                          username: username,
+                          GameId: game.id,
+                          result: 'Draw'
+                        };
+                        this.BetService.create(bet);
+                      });
+                      betModal.present();
+                    }
                 },
                 {
-                    text: 'Email',
-                    handler: () => console.log('share via email')
+                    text: game.team_B+" l'emporte",
+                    handler: () => {
+                      let betModal = this.modalCtrl.create(BetModal);
+                      betModal.onDidDismiss(username => {
+                        let bet = {
+                          username: username,
+                          GameId: game.id,
+                          result: 'Away team wins'
+                        };
+                        this.BetService.create(bet);
+                      });
+                      betModal.present();
+                    }
                 },
                 {
-                    text: 'Cancel',
+                    text: 'Annuler',
                     role: 'cancel',
-                    handler: () => console.log('cancel share')
+                    handler: () => console.log('Pari annulé')
                 }
             ]
         });

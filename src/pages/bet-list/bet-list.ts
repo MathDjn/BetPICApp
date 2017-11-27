@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Config, NavController} from 'ionic-angular';
 import {BetService} from '../../providers/bet-service-rest';
-import {BetDetailPage} from '../bet-detail/bet-detail';
+import {GameDetailPage} from '../game-detail/game-detail';
 import leaflet from 'leaflet';
 
 @Component({
@@ -21,8 +21,8 @@ export class BetListPage {
         this.findAll();
     }
 
-    openBetDetail(bet: any) {
-        this.navCtrl.push(BetDetailPage, bet);
+    openGameDetail(bet: any) {
+        this.navCtrl.push(GameDetailPage, bet);
     }
 
     onInput(event) {
@@ -70,7 +70,7 @@ export class BetListPage {
         this.markersGroup = leaflet.layerGroup([]);
         this.bets.forEach(bet => {
             if (bet.lat, bet.lng) {
-                let marker: any = leaflet.marker([bet.lat, bet.lng]).on('click', event => this.openBetDetail(event.target.data));
+                let marker: any = leaflet.marker([bet.lat, bet.lng]).on('click', event => this.openGameDetail(event.target.data));
                 marker.data = bet;
                 this.markersGroup.addLayer(marker);
             }

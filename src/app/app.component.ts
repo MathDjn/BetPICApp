@@ -7,7 +7,6 @@ import {GameListPage} from '../pages/game-list/game-list';
 import {BetListPage} from '../pages/bet-list/bet-list';
 import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
 import {WelcomePage} from '../pages/welcome/welcome';
-import {AboutPage} from '../pages/about/about';
 
 export interface MenuItem {
     title: string;
@@ -31,14 +30,10 @@ export class MyApp {
         this.initializeApp();
 
         this.appMenuItems = [
+            {title: 'Accueil', component: WelcomePage, icon: 'bookmark'},
             {title: 'Matchs', component: GameListPage, icon: 'football'},
             {title: 'Favoris', component: FavoriteListPage, icon: 'star'},
             {title: 'Paris', component: BetListPage, icon: 'beer'}
-        ];
-
-        this.helpMenuItems = [
-            {title: 'Welcome', component: WelcomePage, icon: 'bookmark'},
-            {title: 'About', component: AboutPage, icon: 'information-circle'},
         ];
 
     }

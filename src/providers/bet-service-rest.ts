@@ -26,21 +26,7 @@ export class BetService {
             .toPromise();
     }
 
-    // getFavorites() {
-    //     return Promise.resolve(this.favorites);
-    // }
-    //
-    // favorite(bet) {
-    //     this.favoriteCounter = this.favoriteCounter + 1;
-    //     this.favorites.push({id: this.favoriteCounter, bet: bet});
-    //     return Promise.resolve();
-    // }
-    //
-    // unfavorite(favorite) {
-    //     let index = this.favorites.indexOf(favorite);
-    //     if (index > -1) {
-    //       this.favorites.splice(index, 1);
-    //     }
-    //     return Promise.resolve();
-    // }
+    create(bet) {
+        return this.http.post(betsURL + "create", bet);
+    }
 }

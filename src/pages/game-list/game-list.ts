@@ -22,7 +22,7 @@ export class GameListPage {
     }
 
     openGameDetail(game: any) {
-        this.navCtrl.push(GameDetailPage, game);
+        this.navCtrl.push(GameDetailPage, game.id);
     }
 
     onInput(event) {
