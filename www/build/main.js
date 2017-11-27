@@ -366,7 +366,7 @@ var FavoriteListPage = (function () {
         this.getFavorites();
     }
     FavoriteListPage.prototype.itemTapped = function (favorite) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__game_detail_game_detail__["a" /* GameDetailPage */], favorite.game);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__game_detail_game_detail__["a" /* GameDetailPage */], favorite.game.id);
     };
     FavoriteListPage.prototype.deleteItem = function (favorite) {
         var _this = this;
@@ -385,11 +385,12 @@ var FavoriteListPage = (function () {
 }());
 FavoriteListPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-favorite-list',template:/*ion-inline-start:"C:\Users\mathilde.dujon\Documents\GitHub\BetPICApp\src\pages\favorite-list\favorite-list.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-title>Favorites</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n    <ion-list>\n\n        <ion-item-sliding *ngFor="let favorite of favorites">\n\n            <button ion-item (click)="itemTapped(favorite)">\n\n                <h2>{{favorite.game.name}}</h2>\n\n                <p>{{favorite.game.team_A}} vs {{favorite.game.team_B}}</p>\n\n                <p>{{favorite.game.date}} ∙ {{favorite.game.stadium}}</p>\n\n            </button>\n\n            <ion-item-options>\n\n                <button danger (click)="deleteItem(favorite)">Delete</button>\n\n            </ion-item-options>\n\n        </ion-item-sliding>\n\n    </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\mathilde.dujon\Documents\GitHub\BetPICApp\src\pages\favorite-list\favorite-list.html"*/
+        selector: 'page-favorite-list',template:/*ion-inline-start:"C:\Users\mathilde.dujon\Documents\GitHub\BetPICApp\src\pages\favorite-list\favorite-list.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-title>Favorites</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n    <ion-list>\n\n        <ion-item-sliding *ngFor="let favorite of favorites">\n\n            <button ion-item (click)="itemTapped(favorite)">\n\n                <!-- <h2>{{favorite.game.name}}</h2> -->\n\n                <h2 text-center class="card-title"> <ion-icon name="football"></ion-icon> <b> {{favorite.game.team_A}} vs {{favorite.game.team_B}} </b><ion-icon name="football"></ion-icon></h2>\n\n                <p text-center class="card-title">{{favorite.game.date}} ∙ {{favorite.game.stadium}}</p>\n\n            </button>\n\n            <ion-item-options>\n\n                <button danger (click)="deleteItem(favorite)">Delete</button>\n\n            </ion-item-options>\n\n        </ion-item-sliding>\n\n    </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\mathilde.dujon\Documents\GitHub\BetPICApp\src\pages\favorite-list\favorite-list.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_game_service_rest__["a" /* GameService */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_game_service_rest__["a" /* GameService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_game_service_rest__["a" /* GameService */]) === "function" && _b || Object])
 ], FavoriteListPage);
 
+var _a, _b;
 //# sourceMappingURL=favorite-list.js.map
 
 /***/ }),

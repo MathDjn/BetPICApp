@@ -16,8 +16,9 @@ export class FavoriteListPage {
     }
 
     itemTapped(favorite) {
-        this.navCtrl.push(GameDetailPage, favorite.game);
+        this.navCtrl.push(GameDetailPage, favorite.game.id);
     }
+
 
     deleteItem(favorite) {
         this.service.unfavorite(favorite)
