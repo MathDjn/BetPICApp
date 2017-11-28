@@ -90,7 +90,7 @@ var GameListPage = (function () {
 }());
 GameListPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-game-list',template:/*ion-inline-start:"C:\Users\mathilde.dujon\Documents\GitHub\BetPICApp\src\pages\game-list\game-list.html"*/'<ion-header>\n\n\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"\n\n                       (ionCancel)="onCancel($event)"></ion-searchbar>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="game-list">\n\n\n\n    <ion-list *ngIf="viewMode===\'list\'">\n\n\n\n        <ion-item-sliding *ngFor="let game of games">\n\n            <button ion-item (click)="openGameDetail(game)">\n\n                <ion-thumbnail item-left>\n\n                    <img src="{{game.logoTeam_A}}"/>\n\n                </ion-thumbnail>\n\n                <div text-center>\n\n                  <h2> <b>{{game.team_A}}</b> {{game.goals_team_A}}<b> - </b>{{game.goals_team_B}} <b>{{game.team_B}} </b></h2>\n\n                  <p>{{game.date | date: \'dd/MM/yyyy H:mm\' }}</p>\n\n                </div>\n\n                <ion-thumbnail item-right>\n\n                    <img src="{{game.logoTeam_B}}"/>\n\n                </ion-thumbnail>\n\n            </button>\n\n            <ion-item-options>\n\n                <button danger (click)="deleteItem(game)">Delete</button>\n\n            </ion-item-options>\n\n        </ion-item-sliding>\n\n\n\n    </ion-list>\n\n\n\n    <!-- <div *ngIf="viewMode===\'map\'" style="width:100%;height:100%;" id="map"></div> -->\n\n\n\n</ion-content>\n\n\n\n<!-- TODO <button ion-button (click)="openCreateBet()">\n\n      Parier !\n\n</button> -->\n\n\n\n<!-- <ion-footer padding>\n\n    <ion-segment [(ngModel)]="viewMode">\n\n        <ion-segment-button value="list">\n\n            <ion-icon name="list"></ion-icon>\n\n        </ion-segment-button>\n\n        <ion-segment-button value="map" (ionSelect)="gameMap()">\n\n            <ion-icon name="map"></ion-icon>\n\n        </ion-segment-button>\n\n    </ion-segment>\n\n</ion-footer> -->\n\n'/*ion-inline-end:"C:\Users\mathilde.dujon\Documents\GitHub\BetPICApp\src\pages\game-list\game-list.html"*/
+        selector: 'page-game-list',template:/*ion-inline-start:"C:\Users\mathilde.dujon\Documents\GitHub\BetPICApp\src\pages\game-list\game-list.html"*/'<ion-header>\n\n\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"\n\n                       (ionCancel)="onCancel($event)"></ion-searchbar>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="game-list">\n\n\n\n    <ion-list *ngIf="viewMode===\'list\'">\n\n\n\n        <ion-item-sliding *ngFor="let game of games">\n\n            <button ion-item (click)="openGameDetail(game)">\n\n                <ion-thumbnail item-left>\n\n                    <img src="{{game.logoTeam_A}}"/>\n\n                </ion-thumbnail>\n\n                <div text-center>\n\n                  <h2> <b>{{game.team_A}}</b> {{game.goals_team_A}}<b> - </b>{{game.goals_team_B}} <b>{{game.team_B}} </b></h2>\n\n                  <p>{{game.date | date: \'dd/MM/yyyy\' }}</p>\n\n                </div>\n\n                <ion-thumbnail item-right>\n\n                    <img src="{{game.logoTeam_B}}"/>\n\n                </ion-thumbnail>\n\n            </button>\n\n            <ion-item-options>\n\n                <button danger (click)="deleteItem(game)">Delete</button>\n\n            </ion-item-options>\n\n        </ion-item-sliding>\n\n\n\n    </ion-list>\n\n\n\n    <!-- <div *ngIf="viewMode===\'map\'" style="width:100%;height:100%;" id="map"></div> -->\n\n\n\n</ion-content>\n\n\n\n<!-- TODO <button ion-button (click)="openCreateBet()">\n\n      Parier !\n\n</button> -->\n\n'/*ion-inline-end:"C:\Users\mathilde.dujon\Documents\GitHub\BetPICApp\src\pages\game-list\game-list.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_game_service_rest__["a" /* GameService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Config */]])
 ], GameListPage);
@@ -387,10 +387,9 @@ FavoriteListPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
         selector: 'page-favorite-list',template:/*ion-inline-start:"C:\Users\mathilde.dujon\Documents\GitHub\BetPICApp\src\pages\favorite-list\favorite-list.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-title>Favorites</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n    <ion-list>\n\n        <ion-item-sliding *ngFor="let favorite of favorites">\n\n            <button ion-item (click)="itemTapped(favorite)">\n\n                <!-- <h2>{{favorite.game.name}}</h2> -->\n\n                <h2 text-center class="card-title"> <ion-icon name="football"></ion-icon> <b> {{favorite.game.team_A}} vs {{favorite.game.team_B}} </b><ion-icon name="football"></ion-icon></h2>\n\n                <p text-center class="card-title">{{favorite.game.date}} ∙ {{favorite.game.stadium}}</p>\n\n            </button>\n\n            <ion-item-options>\n\n                <button danger (click)="deleteItem(favorite)">Delete</button>\n\n            </ion-item-options>\n\n        </ion-item-sliding>\n\n    </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\mathilde.dujon\Documents\GitHub\BetPICApp\src\pages\favorite-list\favorite-list.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_game_service_rest__["a" /* GameService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_game_service_rest__["a" /* GameService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_game_service_rest__["a" /* GameService */]])
 ], FavoriteListPage);
 
-var _a, _b;
 //# sourceMappingURL=favorite-list.js.map
 
 /***/ }),
@@ -403,6 +402,7 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__game_list_game_list__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bet_list_bet_list__ = __webpack_require__(303);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -412,6 +412,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -425,19 +426,23 @@ var WelcomePage = (function () {
     WelcomePage.prototype.openGameList = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__game_list_game_list__["a" /* GameListPage */]);
     };
+    WelcomePage.prototype.openBetList = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__bet_list_bet_list__["a" /* BetListPage */]);
+    };
     return WelcomePage;
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Slides */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Slides */])
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Slides */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Slides */]) === "function" && _a || Object)
 ], WelcomePage.prototype, "slides", void 0);
 WelcomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-        selector: 'page-welcome',template:/*ion-inline-start:"C:\Users\mathilde.dujon\Documents\GitHub\BetPICApp\src\pages\welcome\welcome.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-title>Prêt ? BET\'PIC !</ion-title>\n\n    </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content no-bounce>\n\n    <ion-slides>\n\n        <ion-slide style="background-image: url(\'assets/img/slide_1.jpg\');">\n\n            <p>L\'important, ce ne sont pas les matchs.<br/>C\'est ce que vous en faites.</p>\n\n        </ion-slide>\n\n\n\n        <ion-slide style="background-image: url(\'assets/img/slide_2.jpg\')">\n\n            <p>Parier !</p>\n\n        </ion-slide>\n\n\n\n        <ion-slide style="background-image: url(\'assets/img/slide_3.jpg\')">\n\n            <p>\n\n                <button ion-button (click)="openGameList()">\n\n                      Voir les matchs !\n\n                </button>\n\n            </p>\n\n        </ion-slide>\n\n    </ion-slides>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\mathilde.dujon\Documents\GitHub\BetPICApp\src\pages\welcome\welcome.html"*/
+        selector: 'page-welcome',template:/*ion-inline-start:"C:\Users\mathilde.dujon\Documents\GitHub\BetPICApp\src\pages\welcome\welcome.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-title>BET\'PIC</ion-title>\n\n    </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content no-bounce>\n\n    <ion-slides>\n\n        <ion-slide style="background-image: url(\'assets/img/slide_1.jpg\');">\n\n            <p>L\'important, ce ne sont pas les buts.<br/>C\'est ce que vous en faites.</p>\n\n        </ion-slide>\n\n\n\n\n\n\n\n        <ion-slide style="background-image: url(\'assets/img/slide_3.jpg\')">\n\n            <p>\n\n                <button ion-button (click)="openGameList()" clear item-center color="secondary">\n\n                      Voir les matchs !\n\n                </button>\n\n            </p>\n\n        </ion-slide>\n\n\n\n        <ion-slide style="background-image: url(\'assets/img/slide_2.jpg\')">\n\n             <p>\n\n             <button ion-button (click)="openBetList()" clear item-center color="secondary">\n\n                      Voir les paris !\n\n                </button>\n\n                 </p>\n\n        </ion-slide>\n\n\n\n\n\n\n\n    </ion-slides>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\mathilde.dujon\Documents\GitHub\BetPICApp\src\pages\welcome\welcome.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _b || Object])
 ], WelcomePage);
 
+var _a, _b;
 //# sourceMappingURL=welcome.js.map
 
 /***/ }),

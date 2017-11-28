@@ -3,7 +3,7 @@
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>Prêt ? BET'PIC !</ion-title>
+        <ion-title>BET'PIC</ion-title>
     </ion-navbar>
 
 </ion-header>
@@ -11,20 +11,29 @@
 <ion-content no-bounce>
     <ion-slides>
         <ion-slide style="background-image: url('assets/img/slide_1.jpg');">
-            <p>L'important, ce ne sont pas les matchs.<br/>C'est ce que vous en faites.</p>
+            <p>L'important, ce ne sont pas les buts.<br/>C'est ce que vous en faites.</p>
         </ion-slide>
 
-        <ion-slide style="background-image: url('assets/img/slide_2.jpg')">
-            <p>Parier !</p>
-        </ion-slide>
+
 
         <ion-slide style="background-image: url('assets/img/slide_3.jpg')">
             <p>
-                <button ion-button (click)="openGameList()">
+                <button ion-button (click)="openGameList()" clear item-center color="secondary">
                       Voir les matchs !
                 </button>
             </p>
         </ion-slide>
+
+        <ion-slide style="background-image: url('assets/img/slide_2.jpg')">
+             <p>
+             <button ion-button (click)="openBetList()" clear item-center color="secondary">
+                      Voir les paris !
+                </button>
+                 </p>
+        </ion-slide>
+
+
+
     </ion-slides>
 
 </ion-content>

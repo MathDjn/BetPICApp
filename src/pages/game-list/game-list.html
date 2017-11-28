@@ -20,7 +20,7 @@
                 </ion-thumbnail>
                 <div text-center>
                   <h2> <b>{{game.team_A}}</b> {{game.goals_team_A}}<b> - </b>{{game.goals_team_B}} <b>{{game.team_B}} </b></h2>
-                  <p>{{game.date | date: 'dd/MM/yyyy H:mm' }}</p>
+                  <p>{{game.date | date: 'dd/MM/yyyy' }}</p>
                 </div>
                 <ion-thumbnail item-right>
                     <img src="{{game.logoTeam_B}}"/>
@@ -40,14 +40,3 @@
 <!-- TODO <button ion-button (click)="openCreateBet()">
       Parier !
 </button> -->
-
-<!-- <ion-footer padding>
-    <ion-segment [(ngModel)]="viewMode">
-        <ion-segment-button value="list">
-            <ion-icon name="list"></ion-icon>
-        </ion-segment-button>
-        <ion-segment-button value="map" (ionSelect)="gameMap()">
-            <ion-icon name="map"></ion-icon>
-        </ion-segment-button>
-    </ion-segment>
-</ion-footer> -->

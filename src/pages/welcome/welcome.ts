@@ -1,6 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import { Slides, NavController } from 'ionic-angular';
 import {GameListPage} from '../game-list/game-list';
+import {BetListPage} from '../bet-list/bet-list';
 
 @Component({
     selector: 'page-welcome',
@@ -18,5 +19,9 @@ export class WelcomePage {
 
     openGameList() {
         this.navCtrl.push(GameListPage);
+    }
+
+    openBetList() {
+        this.navCtrl.push(BetListPage);
     }
 }
