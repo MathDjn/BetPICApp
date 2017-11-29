@@ -15,12 +15,10 @@
 
         <ion-item-sliding *ngFor="let bet of bets">
             <button ion-item (click)="openGameDetail(bet.GameId)">
-                <!-- <h2><b>{{bet.team_A}}</b> {{bet.goals_team_A}}<b> - </b>{{bet.goals_team_B}} <b>{{bet.team_B}} </b></h2> -->
-                <h2><b>Barcelona - Atletico </b></h2>
-                <p> Barcelona l'emporte</p>
-                <!-- <p *ngIf=" bet.result == 'Home team wins' ">{{bet.team_A}} l'emporte</p>
+                <h2><b>{{bet.team_A}}</b> {{bet.goals_team_A}}<b> - </b>{{bet.goals_team_B}} <b>{{bet.team_B}} </b></h2>
+                <p *ngIf=" bet.result == 'Home team wins' ">{{bet.team_A}} l'emporte</p>
                 <p *ngIf=" bet.result == 'Draw' ">Match nul</p>
-                <p *ngIf=" bet.result == 'Away team wins' ">{{bet.team_B}} l'emporte</p> -->
+                <p *ngIf=" bet.result == 'Away team wins' ">{{bet.team_B}} l'emporte</p>
                 <i>Pari réalisé par {{bet.username}}</i>
             </button>
             <ion-item-options>
